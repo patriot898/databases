@@ -2,7 +2,9 @@ var models = require('../models');
 
 module.exports = {
   messages: {
-    get: function (req, res) {}, // a function which handles a get request for all messages
+    get: function (req, res) {
+
+    }, // a function which handles a get request for all messages
     //like the http handler from asynchronous swim sprint
     //retrieves the messages data that we retrieved from the models/index.js file
     //then writes the information

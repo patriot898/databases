@@ -60,14 +60,14 @@ module.exports = {
 
   users: {
     // Ditto as above.
-    get: function (username, callback) {
+    get: function (params, callback) {
       var query = 'SELECT * FROM messages WHERE userid = (SELECT id FROM users WHERE username = "' + username + '")';
     },
+//params = ['David']
+    post: function (params, callback) {
+      var userQuery = 'INSERT INTO users (username) VALUES (?)';
 
-    post: function (username) {
-      var userQuery = 'INSERT INTO users (username) VALUES ("' + username + '")';
-
-      connection.query(userQuery,(err, result) =>{
+      connection.query(userQuery, params, (err, result) =>{
         if (err) {
           callback(err);
         } else {
